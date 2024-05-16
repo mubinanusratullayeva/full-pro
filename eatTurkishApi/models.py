@@ -34,3 +34,39 @@ class MenuPackages(models.Model):
         ordering = ['title']
         verbose_name = 'Menu Package'
         db_table = 'menu_packages'
+
+
+class Testimony(models.Model):
+    name = models.CharField(max_length=60)
+    comment = models.CharField(max_length=2000)
+    last_update = models.DateField(auto_now=True)
+    create_date = models.DateField(auto_now_add=True)
+    time = models.TimeField(auto_now_add=True)
+    views = models.PositiveBigIntegerField()
+
+    def __str__(self):
+        return f"{self.name}"
+
+    class Meta:
+        verbose_name_plural = 'Testimonies'
+        ordering = ['last_update']
+        verbose_name = 'Testimony'
+        db_table = 'testimony'
+
+
+class News(models.Model):
+    img = models.URLField()
+    title = models.CharField(max_length=70)
+    description = models.CharField(max_length=160)
+    text = models.TextField()
+    last_update = models.DateField(auto_now=True)
+    create_date = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.title}"
+
+    class Meta:
+        verbose_name_plural = 'News'
+        ordering = ['last_update']
+        verbose_name = 'News'
+        db_table = 'news'
