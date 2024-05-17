@@ -42,7 +42,7 @@ class Testimony(models.Model):
     last_update = models.DateField(auto_now=True)
     create_date = models.DateField(auto_now_add=True)
     time = models.TimeField(auto_now_add=True)
-    views = models.PositiveBigIntegerField()
+    views = models.PositiveBigIntegerField(default=0)
 
     def __str__(self):
         return f"{self.name}"
