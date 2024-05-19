@@ -1,0 +1,18 @@
+{% extends 'pages/index.html' %}
+
+{% block title %}News{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="block">
+            {% for i in news_detail %}
+            <h2 class="block__title">{{ i.title }}</h2>
+            <p class="block__desc">{{ i.description }}</p>
+            <img class="block__img" src="{{ i.img }}" alt="{{ i.title }}">
+            <p class="block__text">{{ i.text }}</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,85 @@
+@use'../mixins';
+@use'../variables';
+
+.bgFf{
+    padding-top: 120px;
+    background-color: #f8f8f8;
+    .popular{
+        overflow: hidden;
+        &__navbar{
+            @include mixins.flexbox(center, space-between);
+            &-title{
+                font-family: 'Cera Round Pro';
+                font-weight: 500;
+                font-size: 48px;
+                line-height: 48px;
+                letter-spacing: 0.03em;
+                text-transform: capitalize;
+                font-feature-settings: 'tnum' on, 'lnum' on;
+                color: variables.$diff-color;
+            }
+            &-flexBox{
+                @include mixins.flexbox(center);
+                column-gap: 20px;
+            }
+        }
+        .cards{
+            padding: 40px 0 71px;
+            @include mixins.flexbox(center, center);
+            column-gap: 35px;
+            &__item{
+                max-width: 310px;
+                display: block;
+                background-color: variables.$main-color;
+                padding: 40px 20px;
+                &-img{
+                    padding-bottom: 6px;
+                }
+                &-block{
+                @include mixins.flexbox(center, center, column);
+                    &--title{
+                        max-width: 270px;
+                        padding-top: 6px;
+                        color: variables.$secondary-color;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 25px;
+                        text-align: center;
+                    }
+                    &--price{
+                        display: inline-block;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 25px;
+                        text-align: center;
+                        color: variables.$diff-color;
+                    }
+                }
+            }
+        }
+        .flexBoxKrop__btnGroup {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+          }
+        &__icon{
+            width: 93px;
+            margin-bottom: -48px;
+            margin-left: 1213px;
+        }
+    }
+}
+
+.darkPop{
+    transition: 0.4s ease-in-out !important;
+    background-color: #490202;
+}
+
+.cardsItem{
+    transition: 0.4s ease-in-out !important;
+    background-color: #650c3fb3 !important;
+}

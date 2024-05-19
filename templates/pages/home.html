@@ -18,4 +18,218 @@ Restaurant Home
         </div>
     </div>
 </header>
+<main>
+    <section class="bgFf">
+        <div class="container">
+            <div class="popular">
+                <nav class="popular__navbar">
+                    <h2 class="popular__navbar-title">Popular Dishes</h2>
+                    <div class="popular__navbar-flexBox">
+                        <button style="margin-right: 30px; opacity: 5;" class="delete-button carousel-control-prev"
+                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">&lt;</button>
+                        <button style="margin-left: 30px; opacity: 5;" class="delete-button carousel-control-next"
+                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">></button>
+                    </div>
+                </nav>
+                <div id="carouselExampleControls" class="cards carousel slide" data-bs-ride="carousel">
+                    {% for i in popular_dishes %}
+                    <div class="cards__item carousel-item {% if forloop.first %}active{% endif %}">
+                        <img class="cards__item-img" width="270" height="183" src="{{ i.img }}"
+                            alt="one of the popular dishes">
+                        <div class="cards__item-block">
+                            <h4 class="cards__item-block--title">{{ i.title }}</h4>
+                            <div class="cards__item-block--favo"></div>
+                            <span class="cards__item-block--price">${{ i.price }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <img class="popular__icon" src="../../media/img/pageicon.png" alt="biteDelight">
+            </div>
+        </div>
+    </section>
+    <section class="bgFe">
+        <div class="container">
+            <div class="menuPack">
+                <h2 class="menuPack__title">Our Regular Menu Pack</h2>
+                <div class="menuPack__btns">
+                    <button class="menuPack__btns-item">All</button>
+                    <button class="menuPack__btns-item">shawarma</button>
+                    <button class="menuPack__btns-item">turk kebab</button>
+                    <button class="menuPack__btns-item">hamburger kebab</button>
+                    <button class="menuPack__btns-item">doner kebab</button>
+                    <button class="menuPack__btns-item">shish kebab</button>
+                    <button class="menuPack__btns-item">french fries pizza</button>
+                    <button class="menuPack__btns-item">dessert</button>
+                </div>
+                <div class="menuPack__dishCards">
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                    <div class="menuPack__dishCards-item">
+                        <h3 class="menuPack__dishCards-item--title">Barbecue Shish kebab Shashlik Skewer</h3>
+                        <span class="menuPack__dishCards-item--price">$12.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimony">
+        <div class="container">
+            <div class="flexBoxKrop">
+                <h6 class="flexBoxKrop__topTitle">testimony</h6>
+                <svg width="40" height="9" viewBox="0 0 40 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M33.5016 9C37.0849 9 40 6.98129 40 4.49995C40 2.01861 37.0849 0 33.5016 0C30.1122 0 27.3221 1.80637 27.03 4.1018H22.3529V3.1552L0 3.1552V5.84446L22.353 5.84446V4.89798H27.0301C27.3223 7.19352 30.1122 9 33.5016 9ZM21.4898 5.04839L0.863293 5.04839V3.95161L21.4898 3.95161V5.04839ZM27.8662 4.49995C27.8662 2.45778 30.3944 0.796403 33.5017 0.796403C36.6091 0.796403 39.1372 2.45778 39.1372 4.49995C39.1372 6.54222 36.6091 8.2037 33.5017 8.2037C30.3944 8.2037 27.8662 6.54222 27.8662 4.49995Z"
+                        fill="#242424" />
+                </svg>
+                <h2 class="flexBoxKrop__title">Happy customers</h2>
+                <div class="flexBoxKrop__cards">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        {% for i in testimonies %}
+                        <div class="flexBoxKrop__cards-item carousel-item {% if forloop.first %}active{% endif %}">
+                            <h3 class="flexBoxKrop__cards-item--title">{{ i.name }}</h3>
+                            <p class="flexBoxKrop__cards-item--text">
+                                {{ i.comment }}
+                            </p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="flexBoxKrop__btnGroup">
+                        <button style="margin-right: 30px; opacity: 5;" class="delete-button carousel-control-prev"
+                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">&lt;</button>
+                        <button style="margin-left: 30px; opacity: 5;" class="delete-button carousel-control-next"
+                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">></button>
+                    </div>
+                </div>
+            </div>
+            <img style="margin-left: 1213px; margin-bottom: -217px;" src="../../media/img/pageicon.png"
+                alt="biteDelight">
+        </div>
+    </section>
+    <section class="updates">
+        <div class="container">
+            <div class="news">
+                <h6 class="news__topTitle">news</h6>
+                <svg width="40" height="9" viewBox="0 0 40 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M33.5016 9C37.0849 9 40 6.98129 40 4.49995C40 2.01861 37.0849 0 33.5016 0C30.1122 0 27.3221 1.80637 27.03 4.1018H22.3529V3.1552L0 3.1552V5.84446L22.353 5.84446V4.89798H27.0301C27.3223 7.19352 30.1122 9 33.5016 9ZM21.4898 5.04839L0.863293 5.04839V3.95161L21.4898 3.95161V5.04839ZM27.8662 4.49995C27.8662 2.45778 30.3944 0.796403 33.5017 0.796403C36.6091 0.796403 39.1372 2.45778 39.1372 4.49995C39.1372 6.54222 36.6091 8.2037 33.5017 8.2037C30.3944 8.2037 27.8662 6.54222 27.8662 4.49995Z"
+                        fill="#BB2339" />
+                </svg>
+                <h2 class="news__title">Gerícht updates</h2>
+                <div class="news__cards">
+                    {% for i in news|slice:":3" %}
+                    <div class="news__cards-block">
+                        <img src=" {{ i.img }}" alt="{{ i.title }}" class="news__cards-block--png">
+                        <div style="padding: 20px 20px 30px 20px;">
+                            <h2 class="news__cards-block--title">{{ i.title }}</h2>
+                            <p class="news__cards-block--text">{{ i.description }}</p>
+                            <a href="#" class="news__cards-block--link">read more</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="accordion-item border-0">
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body p-0">
+                            {% for i in news %}
+                            <div class="news__cards-block {% if forloop.counter > 3 %}hidden{% endif %}">
+                                <img src="{{ i.img }}" alt="{{ i.title }}" class="news__cards-block--png">
+                                <div style="padding: 20px 20px 30px 20px;">
+                                    <h2 class="news__cards-block--title">{{ i.title }}</h2>
+                                    <p class="news__cards-block--text">{{ i.description }}</p>
+                                    <a href="#" class="news__cards-block--link">read more</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <h2 class="accordion-header">
+                        <button class="news__btn accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            view more
+                        </button>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bgVideo">
+        <img class="bgVideo__ifr-icon" src="./icons/biteDelight.svg" alt="biteDelight">
+        <iframe class="bgVideo__ifr" width="100%" height="600px" src="https://www.youtube.com/embed/oEHO9N_5i6I"
+            title="London&#39;s best neighbourhoods to visit | Condé Nast Traveller" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </section>
+    <section class="instagr">
+        <div class="container">
+            <div class="instagr__fotoBox">
+                <div class="instagr__fotoBox-desc">
+                    <h6 class="instagr__fotoBox-desc--topTitle">instagram</h6>
+                    <svg width="40" height="9" viewBox="0 0 40 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M33.5016 9C37.0849 9 40 6.98129 40 4.49995C40 2.01861 37.0849 0 33.5016 0C30.1122 0 27.3221 1.80637 27.03 4.1018H22.3529V3.1552L0 3.1552V5.84446L22.353 5.84446V4.89798H27.0301C27.3223 7.19352 30.1122 9 33.5016 9ZM21.4898 5.04839L0.863293 5.04839V3.95161L21.4898 3.95161V5.04839ZM27.8662 4.49995C27.8662 2.45778 30.3944 0.796403 33.5017 0.796403C36.6091 0.796403 39.1372 2.45778 39.1372 4.49995C39.1372 6.54222 36.6091 8.2037 33.5017 8.2037C30.3944 8.2037 27.8662 6.54222 27.8662 4.49995Z"
+                            fill="#BB2339" />
+                    </svg>
+                    <h2 class="instagr__fotoBox-desc--title">photo gallery</h2>
+                    <p class="instagr__fotoBox-desc--text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Volutpat mattis ipsum turpis elit elit scelerisque egestas mu.</p>
+                    <button class="instagr__fotoBox-desc--btn">view more</button>
+                </div>
+                <div class="instagr__fotoBox-fotos">
+                    <img src="./images/michele-blackwell-rAyCBQTH7ws-unsplash1x.png" alt="food img1"
+                        srcset="./images/michele-blackwell-rAyCBQTH7ws-unsplash1x.png 1x, ./images/michele-blackwell-rAyCBQTH7ws-unsplash2x.png 2x">
+                    <img src="./images/insimg1x.png" alt="food img2"
+                        srcset="./images/insimg1x.png 1x, ./images/insimg2x.png 2x">
+                    <img src="./images/michele-blackwell-rAyCBQTH7ws-unsplash1x.png" alt="food img1"
+                        srcset="./images/michele-blackwell-rAyCBQTH7ws-unsplash1x.png 1x, ./images/michele-blackwell-rAyCBQTH7ws-unsplash2x.png 2x">
+                    <img src="./images/insimg1x.png" alt="food img2"
+                        srcset="./images/insimg1x.png 1x, ./images/insimg2x.png 2x">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 {% endblock %}

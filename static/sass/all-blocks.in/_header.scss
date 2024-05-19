@@ -1,0 +1,60 @@
+@use'../variables';
+@use'../mixins';
+
+
+.navBoss{
+    background-color: #BB2339;
+}
+
+.CheangedHero, .darknav{
+    transition: 0.4s ease-in-out !important;
+    background: #200122;
+background: -webkit-linear-gradient(to right, #6f0000, #200122);
+background: linear-gradient(to right, #6f0000, #200122);
+}
+.heroTop{
+    padding-bottom: 237px;
+    background-color: variables.$diff-color;
+    .hero{
+        margin-top: 80px;
+        background-image: url(../../../media/img/hero-bg2x.png);
+        background-repeat: no-repeat;
+        background-size:contain;
+        background-position-x: 100%;
+        background-position-y: center;
+        @include mixins.bgformat-2x('../../../media/img/hero-bg2x.png', cover);
+        &__desk{
+            &-topTitle{
+                font-family: variables.$title-font;
+                font-weight: 700;
+                font-size: 23px;
+                line-height: 130%;
+                letter-spacing: 0.04em;
+                text-transform: capitalize;
+            }
+            &-mainTitle{
+                margin: 25px 0 20px 0;
+                max-width: 555px;
+                font-family: variables.$title-font;
+                font-weight: 700;
+                font-size: 90px;
+                line-height: 130%;
+                letter-spacing: 0.04em;
+                text-transform: capitalize;
+
+            }
+            &-text{
+                margin-bottom: 40px;
+                max-width: 453px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 175%;
+                letter-spacing: 0.04em;
+                opacity: 0.7;
+            }
+            .borWBtn{
+                @include mixins.borWBtn(variables.$main-color, variables.$main-color);
+            }
+        }
+    }
+}

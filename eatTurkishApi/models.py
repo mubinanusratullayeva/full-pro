@@ -5,7 +5,7 @@ from django.db import models
 class PopularDishes(models.Model):
     img = models.URLField()
     title = models.CharField(max_length=70)
-    price = models.IntegerField()
+    price = models.FloatField()
     last_update = models.DateField(auto_now=True)
     create_date = models.DateField(auto_now_add=True)
 

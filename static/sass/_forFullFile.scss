@@ -1,0 +1,301 @@
+@use'./variables';
+@use'./mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1315px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body{
+    font-family: variables.$body-font;
+    color: variables.$main-color;
+    transition: 0.3s ease-in-out;
+}
+
+.darkTitle{
+    color: variables.$main-color !important;
+}
+
+section{
+    transition: 0.3s ease-in-out;
+}
+
+.darkModeOfSection{
+    background-color: #6f0000;
+}
+
+.btnFontColor{
+    color: #ffffffa6 !important;
+}
+
+.navBoss{
+    .navbar{
+        @include mixins.flexbox(center, space-between);
+        &__menu{
+            min-width: 35%;
+            @include mixins.flexbox(center, space-between);
+            &-burger{
+                @include mixins.flexbox(center, space-between);
+                column-gap: 40px;
+                margin-right: 40px;
+                &--list{
+                list-style: none;
+                }
+                &--link{
+                padding: 38px 0;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                letter-spacing: 0.04em;
+                color: variables.$main-color;
+                text-decoration: none;
+                }
+                &--link:hover{
+                    border-bottom: 2px solid rgb(255, 255, 0); 
+                }
+            }
+            &-switch{
+                background-color: #ffffff;
+                width: 40px;
+                height: 20px;
+                border-radius: 20px;
+                cursor: pointer;
+                border: 2px solid #ffffff;
+                position: relative;
+            }
+            &-switchBtn{
+                width: 17px;
+                height: 17px;
+                border-radius: 50%;
+                background-color: variables.$diff-color;
+                display: inline-block;
+                position: absolute;
+                left: 0;
+                transition: 0.2s;
+            }
+            .changePos{
+               left: 20px;
+               background-color: #200122;
+               background-color: -webkit-linear-gradient(to right, #6f0000, #200122);
+               background-color: linear-gradient(to right, #6f0000, #200122);
+            }
+            .borWBtn{
+                margin-left: 40px;
+                @include mixins.borWBtn(variables.$main-color, variables.$diff-color);
+            }
+        }
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    margin-left: 40px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #ffffff00;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    border: 1px solid #FFFFFF;
+}
+.btn::after {
+    content: "";
+    display: inline-block;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #ffffff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.delete-button {
+background-color: #000;
+color: variables.$main-color;
+font-size: 44px;
+border: 0.5px solid rgba(0, 0, 0, 0.1);
+padding-bottom: 8px;
+width: 60px;
+height: 65px;
+border-radius: 15px 15px 12px 12px;
+cursor: pointer;
+position: relative;
+will-change: transform;
+-webkit-transition: all .1s ease-in-out 0s;
+transition: all .1s ease-in-out 0s;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+/* Add gradient shading to each side */
+background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0))),
+-webkit-gradient(linear, left top, left bottom, from(rgba(216, 24, 24, 0.8)), to(rgba(0, 0, 0, 0)));
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+background-position: bottom right, bottom right;
+background-size: 100% 100%, 100% 100%;
+background-repeat: no-repeat;
+-webkit-box-shadow: inset -4px -10px 0px rgba(255, 255, 255, 0.4),
+inset -4px -8px 0px rgba(0, 0, 0, 0.3),
+0px 2px 1px rgba(0, 0, 0, 0.3),
+0px 2px 1px rgba(255, 255, 255, 0.1);
+box-shadow: inset -4px -10px 0px rgba(255, 255, 255, 0.4),
+inset -4px -8px 0px rgba(0, 0, 0, 0.3),
+0px 2px 1px rgba(0, 0, 0, 0.3),
+0px 2px 1px rgba(255, 255, 255, 0.1);
+-webkit-transform: perspective(70px) rotateX(5deg) rotateY(0deg);
+transform: perspective(70px) rotateX(5deg) rotateY(0deg);
+}
+
+.delete-button::after {
+content: '';
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(209, 28, 28, 0.2)), to(rgba(0, 0, 0, 0.5)));
+background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(235, 28, 28, 0.5));
+z-index: -1;
+border-radius: 15px;
+-webkit-box-shadow: inset 4px 0px 0px rgba(255, 255, 255, 0.1),
+inset 4px -8px 0px rgba(0, 0, 0, 0.3);
+box-shadow: inset 4px 0px 0px rgba(255, 255, 255, 0.1),
+inset 4px -8px 0px rgba(0, 0, 0, 0.3);
+-webkit-transition: all .1s ease-in-out 0s;
+transition: all .1s ease-in-out 0s;
+}
+
+.delete-button::before {
+content: '';
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 10, 10, 0.8)), to(rgba(0, 0, 0, 0))),
+-webkit-gradient(linear, left top, left bottom, from(rgba(255, 0, 0, 0.8)), to(rgba(0, 0, 0, 0)));
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+background-position: bottom right, bottom right;
+background-size: 100% 100%, 100% 100%;
+background-repeat: no-repeat;
+z-index: -1;
+border-radius: 15px;
+-webkit-transition: all .1s ease-in-out 0s;
+transition: all .1s ease-in-out 0s;
+}
+
+.delete-button:active {
+will-change: transform;
+-webkit-transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(3px) scale(0.96);
+transform: perspective(80px) rotateX(5deg) rotateY(1deg) translateY(3px) scale(0.96);
+height: 64px;
+border: 0.25px solid rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: inset -4px -8px 0px rgba(255, 255, 255, 0.2),
+inset -4px -6px 0px rgba(0, 0, 0, 0.8),
+0px 1px 0px rgba(0, 0, 0, 0.9),
+0px 1px 0px rgba(255, 255, 255, 0.2);
+box-shadow: inset -4px -8px 0px rgba(255, 255, 255, 0.2),
+inset -4px -6px 0px rgba(0, 0, 0, 0.8),
+0px 1px 0px rgba(0, 0, 0, 0.9),
+0px 1px 0px rgba(255, 255, 255, 0.2);
+-webkit-transition: all .1s ease-in-out 0s;
+transition: all .1s ease-in-out 0s;
+}
+
+.delete-button::after:active {
+background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0, 0, 0, 0.5)), to(rgba(255, 255, 255, 0.2)));
+background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.2));
+}
+
+.delete-button:active::before {
+content: "";
+display: block;
+position: absolute;
+top: 5%;
+left: 20%;
+width: 50%;
+height: 80%;
+background-color: rgba(255, 255, 255, 0.1);
+-webkit-animation: overlay 0.1s ease-in-out 0s;
+animation: overlay 0.1s ease-in-out 0s;
+pointer-events: none;
+}
+
+@-webkit-keyframes overlay {
+from {
+opacity: 0;
+}
+
+to {
+opacity: 1;
+}
+}
+
+@keyframes overlay {
+from {
+opacity: 0;
+}
+
+to {
+opacity: 1;
+}
+}
+
+.delete-button:focus {
+outline: none;
+}

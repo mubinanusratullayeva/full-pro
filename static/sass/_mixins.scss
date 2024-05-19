@@ -1,0 +1,54 @@
+@use './variables';
+
+@mixin flexbox($align:default, $justify:default, $fldirection:default) {
+    display: flex;
+    @if $align {
+        align-items: $align;
+    }
+    @else {
+        align-items: center;
+    }
+    @if $justify {
+        justify-content: $justify;
+    }
+    @else {
+        justify-content: space-between;
+    }
+    @if $fldirection {
+        flex-direction: $fldirection;
+    }
+    @else {
+        flex-direction: column;
+    }
+}
+
+@mixin bgformat-2x ($bg2x:'default', $bg-h:default){
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+     only screen and (min--moz-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+        only screen and (min-resolution: 192dpi),
+         only screen and (min-resolution: 2dppx){
+            background-image: url($bg2x);
+            background-repeat: no-repeat;
+            background-size: contain;
+            min-height: $bg-h;
+         }
+}
+
+@mixin borWBtn($self-border, $self-color){
+    padding: 10px 20px;
+    min-width: 82px !important;
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+    border: 1px solid $self-border;
+    border-radius: 100px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    color: $self-color;
+    text-decoration: none;
+    cursor: pointer;
+}

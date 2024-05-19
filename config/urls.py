@@ -1,5 +1,8 @@
 from django.contrib import admin
+from django.conf.urls.static import static
 from django.urls import path, include, re_path
+
+from config import settings
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -27,3 +30,6 @@ urlpatterns = [
     path('api/v1/', include('eatTurkishApi.urls')),
     path('', include('eatTurkishWeb.urls')),
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

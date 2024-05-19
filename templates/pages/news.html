@@ -1,0 +1,60 @@
+{% extends 'pages/index.html' %}
+
+{% block title %}News{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="pt-5 pb-5">
+            <a href="{% url 'home' %}" class="contact__pageOther">Home</a>
+            <a href="{% url 'news' %}" class="contact__pageThis">News</a>
+        </div>
+        <div class="newp">
+            <h1 class="newp__title">News</h1>
+            <svg width="40" height="9" viewBox="0 0 40 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M33.5016 9C37.0849 9 40 6.98129 40 4.49995C40 2.01861 37.0849 0 33.5016 0C30.1122 0 27.3221 1.80637 27.03 4.1018H22.3529V3.1552L0 3.1552V5.84446L22.353 5.84446V4.89798H27.0301C27.3223 7.19352 30.1122 9 33.5016 9ZM21.4898 5.04839L0.863293 5.04839V3.95161L21.4898 3.95161V5.04839ZM27.8662 4.49995C27.8662 2.45778 30.3944 0.796403 33.5017 0.796403C36.6091 0.796403 39.1372 2.45778 39.1372 4.49995C39.1372 6.54222 36.6091 8.2037 33.5017 8.2037C30.3944 8.2037 27.8662 6.54222 27.8662 4.49995Z"
+                    fill="#BB2339" />
+            </svg>
+            <div class="newp__cards">
+                {% for i in news|slice:":9" %}
+                <div class="newp__cards-block">
+                    <img src=" {{ i.img }}" alt="{{ i.title }}" class="newp__cards-block--png">
+                    <div style="padding: 20px 20px 30px 20px;">
+                        <h2 class="newp__cards-block--title">{{ i.title }}</h2>
+                        <p class="newp__cards-block--text">{{ i.description }}</p>
+                        <div class="d-flex">
+                            <a href="{% url 'newsdetail' id=i.id %}" class="newp__cards-block--link">read more</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% if news.length > 9 %}
+            <div class="accordion-item border-0">
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body p-0">
+                        {% for i in news %}
+                        <div class="newp__cards-block {% if forloop.counter > 9 %}hidden{% endif %}">
+                            <img src="{{ i.img }}" alt="{{ i.title }}" class="newp__cards-block--png">
+                            <div style="padding: 20px 20px 30px 20px;">
+                                <h2 class="newp__cards-block--title">{{ i.title }}</h2>
+                                <p class="newp__cards-block--text">{{ i.description }}</p>
+                                <a href="{% url 'newsdetail' id=i.id %}" class="newp__cards-block--link">read more</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <h2 class="accordion-header">
+                    <button class="newp__btn accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        view more
+                    </button>
+                </h2>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
