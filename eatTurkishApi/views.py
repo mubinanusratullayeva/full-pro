@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.db import transaction
+from django.http import HttpResponse
 
 from rest_framework.viewsets import ModelViewSet
 from rest_framework import status
 from rest_framework.decorators import action
 
-from .models import PopularDishes, MenuPackages, Testimony, News
-from .serializers import PopularDishesSerializer, MenuPackagesSerializer, TestimonySerializer, NewsSerializer
+from .models import PopularDishes, MenuPackages, Testimony, News, AboutUs
+from .serializers import PopularDishesSerializer, MenuPackagesSerializer, TestimonySerializer, NewsSerializer, AboutUsSerializer
 
 
 # Create your views here.
@@ -30,9 +31,14 @@ class TestimonyAPI(ModelViewSet):
         testimony = self.get_object()
         testimony.views += 1
         testimony.save()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return HttpResponse(status=status.HTTP_204_NO_CONTENT)
 
 
 class NewsAPI(ModelViewSet):
     queryset = News.objects.all()
     serializer_class = NewsSerializer
+
+
+class AboutUsAPI(ModelViewSet):
+    queryset = AboutUs.objects.all()
+    serializer_class = AboutUsSerializer

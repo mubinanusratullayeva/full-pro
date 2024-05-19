@@ -2,6 +2,7 @@
 @use'../mixins';
 
 .contact{
+    padding: 20px;
     padding-bottom: 55px;
     &__pageOther{
         font-family: variables.$secondary-font;

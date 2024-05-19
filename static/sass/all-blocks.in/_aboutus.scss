@@ -1,0 +1,40 @@
+@use'../mixins';
+@use'../variables';
+
+.darkabu{
+    background-color: #490202;
+}
+
+.abu{
+    .ab{
+        @include mixins.flexbox(center, center, column);
+        padding: 120px 0 8px;
+        &__title{
+            font-family: variables.$title-font;
+            font-size: 64px;
+            font-weight: 500;
+            line-height: 83.2px;
+            letter-spacing: 0.03em;
+            text-transform: capitalize;
+            color: variables.$secondary-color;
+        }
+        img{
+            padding: 15px 0;
+            width: 720px;
+            height: 640px;
+            border-radius: 10px 0px 0px 0px;
+            opacity: 0px;        
+        }
+        p{
+            width: 720px;
+            font-family: variables.$body-font;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 32px;
+            letter-spacing: 0.04em;
+            text-align: left;
+            color: variables.$secondary-color;
+            opacity: 80%;
+        }
+    }
+}

@@ -67,6 +67,19 @@ class News(models.Model):
 
     class Meta:
         verbose_name_plural = 'News'
-        ordering = ['last_update']
+        ordering = ['-last_update']
         verbose_name = 'News'
         db_table = 'news'
+
+
+class AboutUs(models.Model):
+    text1 = models.TextField()
+    img = models.URLField()
+    text2 = models.TextField()
+
+
+class SendMessage(models.Model):
+    name = models.CharField(max_length=70)
+    email = models.EmailField(max_length=100)
+    phone = models.CharField(max_length=20)
+    message = models.TextField()

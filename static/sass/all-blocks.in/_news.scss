@@ -1,6 +1,10 @@
 @use'../mixins';
 @use'../variables';
 
+.darkupdates{
+    background-color: #3b0303;
+}
+
 .updates{
     .news{
         @include mixins.flexbox(center, center, column);

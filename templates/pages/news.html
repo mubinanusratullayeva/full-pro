@@ -24,7 +24,8 @@
                         <h2 class="newp__cards-block--title">{{ i.title }}</h2>
                         <p class="newp__cards-block--text">{{ i.description }}</p>
                         <div class="d-flex">
-                            <a href="{% url 'newsdetail' id=i.id %}" class="newp__cards-block--link">read more</a>
+                            <a href="{% url 'news_detail' i.id %}" class="newp__cards-block--link">read
+                                more</a>
                         </div>
                     </div>
                 </div>
@@ -40,7 +41,7 @@
                             <div style="padding: 20px 20px 30px 20px;">
                                 <h2 class="newp__cards-block--title">{{ i.title }}</h2>
                                 <p class="newp__cards-block--text">{{ i.description }}</p>
-                                <a href="{% url 'newsdetail' id=i.id %}" class="newp__cards-block--link">read more</a>
+                                <a href="{% url 'news_detail' i.id %}" class="newp__cards-block--link">read more</a>
                             </div>
                         </div>
                         {% endfor %}
