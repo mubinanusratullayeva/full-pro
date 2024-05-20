@@ -32,12 +32,19 @@ Contact Us
                     <h3 class="flexbox__itemSecond-title">send messege</h3>
                     <p class="flexbox__itemSecond-text">If you have any questions, you can send us an SMS
                         or contact us by phone you can also contact us via social networks.</p>
-                    <form class="regForm">
-                        <input class="regForm__elinput" name="name:" type="text" placeholder="Your name">
-                        <input class="regForm__elinput" name="email:" type="email" placeholder="Email address">
-                        <input class="regForm__elinput" name="phone number:" type="tel" placeholder="Phone number">
-                        <input class="regForm__elinput" name="subject:" type="text" placeholder="Subject">
-                        <textarea class="regForm__comment" placeholder="Messege"></textarea>
+                    <form class="regForm" id="#contactForm" method="POST"
+                        action="http://127.0.0.1:8000/api/v1/send-message/">
+                        {% csrf_token %}
+                        <input class="regForm__elinput" id="name" required name="name" type="text"
+                            placeholder="Your name">
+                        <input class="regForm__elinput" id="email" required name="email" type="email"
+                            placeholder="Email address">
+                        <input class="regForm__elinput" id="phone_number" required name="phone_number" type="tel"
+                            placeholder="Phone number">
+                        <input class="regForm__elinput" id="subject" required name="subject" type="text"
+                            placeholder="Subject">
+                        <textarea class="regForm__comment" id="message" name="message" required
+                            placeholder="Messege"></textarea>
                         <button class="regForm__btn" type="submit">Send messege</button>
                     </form>
                 </div>

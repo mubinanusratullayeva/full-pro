@@ -389,9 +389,6 @@ section {
   padding-top: 120px;
   background-color: #f8f8f8;
 }
-.bgFf .popular {
-  overflow: hidden;
-}
 .bgFf .popular__navbar {
   display: flex;
   align-items: center;
@@ -419,9 +416,8 @@ section {
   padding: 40px 0 71px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: default;
-  column-gap: 35px;
 }
 .bgFf .popular .cards__item {
   max-width: 310px;
@@ -746,8 +742,8 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: default;
-  column-gap: 35px;
+  flex-direction: column;
+  row-gap: 30px;
 }
 .testimony .flexBoxKrop__cards-item {
   min-width: 380px;
@@ -787,10 +783,6 @@ section {
 .testimonyCard {
   background: rgb(125, 97, 17) !important;
   background: linear-gradient(0deg, rgb(255, 189, 0) 0%, rgb(95, 13, 71) 100%) !important;
-}
-
-.darkupdates {
-  background-color: #3b0303;
 }
 
 .updates .news {

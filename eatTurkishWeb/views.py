@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.urls import reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse
 
 import requests
 
@@ -65,6 +66,15 @@ class AboutUsView(LoginRequiredMixin, View):
 class ContactUsView(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'pages/contact_us.html')
+    
+
+def post(self, request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
+        message = request.POST.get('message')
+        return HttpResponse(f"Received data: Name={name}, Email={email}, Phone_number:{phone_number}, Message:{message}")
 
 
 class UserRegistrationView(View):

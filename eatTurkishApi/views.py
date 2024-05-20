@@ -6,8 +6,8 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework import status
 from rest_framework.decorators import action
 
-from .models import PopularDishes, MenuPackages, Testimony, News, AboutUs
-from .serializers import PopularDishesSerializer, MenuPackagesSerializer, TestimonySerializer, NewsSerializer, AboutUsSerializer
+from .models import PopularDishes, MenuPackages, Testimony, News, AboutUs, SendMessage
+from .serializers import PopularDishesSerializer, MenuPackagesSerializer, TestimonySerializer, NewsSerializer, AboutUsSerializer, SendMessageSerializer
 
 
 # Create your views here.
@@ -42,3 +42,8 @@ class NewsAPI(ModelViewSet):
 class AboutUsAPI(ModelViewSet):
     queryset = AboutUs.objects.all()
     serializer_class = AboutUsSerializer
+
+
+class SendMessageAPI(ModelViewSet):
+    queryset = SendMessage.objects.all()
+    serializer_class = SendMessageSerializer

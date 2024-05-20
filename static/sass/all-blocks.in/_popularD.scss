@@ -5,7 +5,6 @@
     padding-top: 120px;
     background-color: #f8f8f8;
     .popular{
-        overflow: hidden;
         &__navbar{
             @include mixins.flexbox(center, space-between);
             &-title{
@@ -25,8 +24,7 @@
         }
         .cards{
             padding: 40px 0 71px;
-            @include mixins.flexbox(center, center);
-            column-gap: 35px;
+            @include mixins.flexbox(center, space-between);
             &__item{
                 max-width: 310px;
                 display: block;

@@ -31,8 +31,8 @@
         }
         &__cards{
             padding: 60px 0 40px;
-            @include mixins.flexbox(center, center);
-            column-gap: 35px;
+            @include mixins.flexbox(center, center, column);
+            row-gap: 30px;
             &-item{
                 min-width: 380px;
                 padding: 30px 50px 30px 20px;

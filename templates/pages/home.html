@@ -26,14 +26,20 @@ Restaurant Home
                     <h2 class="popular__navbar-title">Popular Dishes</h2>
                     <div class="popular__navbar-flexBox">
                         <button style="margin-right: 30px; opacity: 5;" class="delete-button carousel-control-prev"
-                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">&lt;</button>
+                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
                         <button style="margin-left: 30px; opacity: 5;" class="delete-button carousel-control-next"
-                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">></button>
+                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </nav>
-                <div id="carouselExampleControls" class="cards carousel slide" data-bs-ride="carousel">
-                    {% for i in popular_dishes %}
-                    <div class="cards__item carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="cards">
+                    {% for i in popular_dishes|slice:":4" %}
+                    <div class="cards__item">
                         <img class="cards__item-img" width="270" height="183" src="{{ i.img }}"
                             alt="one of the popular dishes">
                         <div class="cards__item-block">
@@ -125,8 +131,8 @@ Restaurant Home
                         fill="#242424" />
                 </svg>
                 <h2 class="flexBoxKrop__title">Happy customers</h2>
-                <div class="flexBoxKrop__cards">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleControls" class="flexBoxKrop__cards carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
                         {% for i in testimonies %}
                         <div class="flexBoxKrop__cards-item carousel-item {% if forloop.first %}active{% endif %}">
                             <h3 class="flexBoxKrop__cards-item--title">{{ i.name }}</h3>
@@ -138,9 +144,15 @@ Restaurant Home
                     </div>
                     <div class="flexBoxKrop__btnGroup">
                         <button style="margin-right: 30px; opacity: 5;" class="delete-button carousel-control-prev"
-                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">&lt;</button>
+                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
                         <button style="margin-left: 30px; opacity: 5;" class="delete-button carousel-control-next"
-                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">></button>
+                            type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">next</span>
+                        </button>
                     </div>
                 </div>
             </div>
