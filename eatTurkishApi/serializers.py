@@ -6,7 +6,7 @@ from .models import PopularDishes, MenuPackages, Testimony, News, AboutUs, SendM
 class PopularDishesSerializer(serializers.ModelSerializer):
     class Meta:
         model = PopularDishes
-        fields = ('img', 'title', 'price',)
+        fields = ('img', 'title', 'price', 'like', )
 
 
 class MenuPackagesSerializer(serializers.ModelSerializer):
@@ -24,7 +24,7 @@ class TestimonySerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
-        fields = ('img', 'title', 'description', 'text',)
+        fields = ('img', 'title', 'description', 'text', 'views', )
 
 
 class AboutUsSerializer(serializers.ModelSerializer):

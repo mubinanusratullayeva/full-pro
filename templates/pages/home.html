@@ -44,7 +44,11 @@ Restaurant Home
                             alt="one of the popular dishes">
                         <div class="cards__item-block">
                             <h4 class="cards__item-block--title">{{ i.title }}</h4>
-                            <div class="cards__item-block--favo"></div>
+                            <div class="cards__item-block--favo d-flex align-items-center" style="color: gray;">
+                                <img class="pl-2"
+                                    src="https://th.bing.com/th/id/OIP.B1gfYpiTYHKS43ycFezjXQHaHa?rs=1&pid=ImgDetMain"
+                                    width="20" height="20" alt="star">{{ i.like }}
+                            </div>
                             <span class="cards__item-block--price">${{ i.price }}</span>
                         </div>
                     </div>
@@ -139,6 +143,7 @@ Restaurant Home
                             <p class="flexBoxKrop__cards-item--text">
                                 {{ i.comment }}
                             </p>
+                            <span class="text-secondary">views: {{ i.views }}</span>
                         </div>
                         {% endfor %}
                     </div>

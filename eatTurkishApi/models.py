@@ -8,6 +8,7 @@ class PopularDishes(models.Model):
     price = models.FloatField()
     last_update = models.DateField(auto_now=True)
     create_date = models.DateField(auto_now_add=True)
+    like = models.PositiveBigIntegerField(default=0)
 
     def __str__(self):
         return f"{self.title}"
@@ -61,6 +62,7 @@ class News(models.Model):
     text = models.TextField()
     last_update = models.DateField(auto_now=True)
     create_date = models.DateField(auto_now_add=True)
+    views = models.PositiveBigIntegerField(default=0)
 
     def __str__(self):
         return f"{self.title}"
